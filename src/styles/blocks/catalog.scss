@@ -1,0 +1,9 @@
+@use '../utils/variables';
+
+.catalog {
+  margin: 50px 40px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,  minmax(200px, 1fr));
+  gap: 50px;
+  justify-content: center;
+}
