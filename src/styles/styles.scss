@@ -12,9 +12,14 @@
   box-sizing: border-box;
 }
 
-.page-body {
+.body {
   margin: 0;
   padding: 0;
 
   @include page-standart-font;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
 }

@@ -1,11 +1,11 @@
-@use '../utils/mixins' as *;
 @use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 .card {
   display: flex;
   flex-direction: column;
   width: $card-width;
-
+  min-height: $card-height;
   padding: $card-padding;
 
   background: $color-white;
@@ -14,9 +14,13 @@
   border-radius: $card-border-radius;
 
   @include page-standart-font;
+  @include smooth;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
-    display: block;
     margin: 0 auto;
 
     width: $image-widh;
@@ -34,6 +38,12 @@
     font-weight: $info-weight;
     font-size: $info-size;
     line-height: $info-line-height;
+
+    @include smooth;
+
+    &:hover {
+      color: $color-info-hover;
+    }
   }
 
   &__code {
@@ -53,7 +63,6 @@
 
     &-count {
       align-self: flex-end;
-      font-style: inherit;
     }
   }
 
@@ -96,6 +105,8 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+
+    @include smooth;
 
     &:hover {
       background-color: $color-white;

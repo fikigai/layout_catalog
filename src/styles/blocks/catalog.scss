@@ -1,9 +1,17 @@
-@use '../utils/variables';
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 .catalog {
-  margin: 50px 40px 0;
+  padding: $catalog-padding;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill,  minmax(200px, 1fr));
-  gap: 50px;
-  justify-content: center;
+  gap: $catalog-gap;
+
+  @include responsive-grid(
+    $columns-standart,
+    $columns-mobile,
+    $columns-tablet,
+    $columns-desktop,
+    $column-width
+  );
 }
