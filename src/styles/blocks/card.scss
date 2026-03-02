@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   width: $card-width;
-  min-height: $card-height;
   padding: $card-padding;
 
   background: $color-white;
@@ -16,14 +15,10 @@
   @include page-standart-font;
   @include smooth;
 
-  &:hover {
-    transform: scale(1.2);
-  }
-
   &__image {
     margin: 0 auto;
 
-    width: $image-widh;
+    width: $image-width;
     height: $image-height;
 
     background-image: url(../images/imac.jpeg);
@@ -31,18 +26,19 @@
     background-position: center;
   }
 
-  &__info {
+  &__title {
     margin: 0;
-    margin-top: $info-margin-t;
+    margin-top: $title-margin-t;
 
-    font-weight: $info-weight;
-    font-size: $info-size;
-    line-height: $info-line-height;
+    font-weight: $title-weight;
+    font-size: $title-size;
+    line-height: $title-line-height;
+  }
 
-    @include smooth;
-
-    &:hover {
-      color: $color-info-hover;
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: $color-titles-hover;
     }
   }
 
@@ -92,11 +88,11 @@
 
     width: $buttton-width;
     height: $button-height;
+    border: $button-border;
     border-radius: $button-radius;
 
     color: $color-white;
     background-color: $color-blue;
-    border: $button-border;
     margin-top: $button-margin;
 
     font-weight: $button-weight;
